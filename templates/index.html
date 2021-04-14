@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block container %}
+
+    <section>
+        <h1 class="h1 text-center mx-auto mt-4 py-5"><strong>Найдите идеального <br>репетитора английского, <br>занимайтесь
+            онлайн</strong></h1>
+        {% include 'goal_menu.html' %}
+        <h2 class="h5 text-center mb-5">Наши преподаватели</h2>
+        <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1 m-auto">
+                {% for t in teachers %}
+                    <div class="card mb-4">
+                        {% include 'profile_card.html' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'want_req.html' %}
+    </section>
+
+{% endblock %}

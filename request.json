@@ -1,0 +1,20 @@
+[
+    {
+        "clientName": "яяя з",
+        "clientPhone": "999",
+        "clientGoal": "Для путешествий",
+        "clientTime": "7-10 часов в неделю"
+    },
+    {
+        "clientName": "255",
+        "clientPhone": "+5+54",
+        "clientGoal": "Для программирования",
+        "clientTime": "1-2 часа в неделю"
+    },
+    {
+        "clientName": "356",
+        "clientPhone": "356",
+        "clientGoal": "Для путешествий",
+        "clientTime": "1-2 часа в неделю"
+    }
+]

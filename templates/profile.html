@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block container %}
+    <div class="card my-4 mx-auto">
+        <div class="card-body m-2 m-md-4">
+            <article class="row">
+<!--                <div class="col-5"><img src="/static/images/{{ t.picture }}" class="img-fluid" alt=""></div>-->
+                <div class="col-5"><img src="{{ t.picture }}" class="img-fluid" alt=""></div>
+                <div class="col-7">
+                    <section class="teacher=info">
+                        <h1 class="h2">{{ t.name }}</h1>
+                        <div class="row">
+                            <div class="col-7">
+                                {% for goal in t.goals %}
+                                    <div class="row">
+                                        <span class="badge badge-secondary mx-3 my-1">{{ goals[goal] }} </span>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div>
+                                <p>Рейтинг: {{ t.rating }} </p>
+                                <p>Ставка: {{ t.price }} / час</p>
+                            </div>
+                        </div>
+                        <p>{{ t.about }}</p>
+                    </section>
+
+                    <section class="available">
+                        <h4 class="mb-4 mt-5">Записаться на пробный урок</h4>
+                        {% for day in weekdays %}
+                            <h6 class="mt-4">{{ day[1] }} </h6>
+                            {% if True in (t['free'][day[0]]).values() %}
+                                {% for hour, status in (t['free'][day[0]]).items() %}
+          {% if status %}
+              <a href="{{ url_for('render_booking_item', teacher_id=t.id, weekday= day[0], time = hour ) }}" class="btn btn-outline-success btn-sm mr-2 my-2">{{ hour }}</a>
+
+          {% else %}
+                <a href="#" class="btn btn-outline-danger btn-sm mr-2 my-2 disabled">{{hour}}</a>
+          {% endif %}
+
+
+                                {% endfor %}
+                            {% else %}
+                                <p>Нет свободных уроков</p>
+                            {% endif %}
+                        {% endfor %}
+                    </section>
+
+                </div>
+            </article>
+        </div>
+    </div>
+{% endblock %}

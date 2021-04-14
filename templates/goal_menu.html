@@ -1,0 +1,8 @@
+<div class="text-center mb-5">
+    <div class="btn-group mx-auto mb-0" role="group" aria-label="Basic example">
+        {% for key,value in goals.items() %}
+            <a href="{{ url_for('render_goals_item', goal= key ) }}"
+               class="btn btn-outline-secondary ">{{ value }}</a>
+        {% endfor %}
+    </div>
+</div>

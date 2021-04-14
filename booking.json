@@ -1,0 +1,16 @@
+[
+    {
+        "clientName": "с12",
+        "clientPhone": "123",
+        "clientTeacher": 0,
+        "clientWeekday": "mon",
+        "clientTime": "12:00"
+    },
+    {
+        "clientName": "Сергей",
+        "clientPhone": "16161616",
+        "clientTeacher": 4,
+        "clientWeekday": "mon",
+        "clientTime": "16:00"
+    }
+]

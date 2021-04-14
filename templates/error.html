@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block container %}
+    <p>{{ text }}</p>
+    <p>Перейдите на <a href="{{ url_for('render_main') }}">главную страницу</a> и попробуйте начать оттуда</p>
+{% endblock %}
